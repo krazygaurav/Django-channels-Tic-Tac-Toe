@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="head">
+        <h1>TIC TAC TOE</h1>
+        <h3>Welcome to room: {{room_code}}</h3>
+    </div>
+    <div id = "game_board" room_code = {{room_code}} char_choice = {{char_choice}}>
+        <div class="square" data-index = '0'></div>
+        <div class="square" data-index = '1'></div>
+        <div class="square" data-index = '2'></div>
+        <div class="square" data-index = '3'></div>
+        <div class="square" data-index = '4'></div>
+        <div class="square" data-index = '5'></div>
+        <div class="square" data-index = '6'></div>
+        <div class="square" data-index = '7'></div>
+        <div class="square" data-index = '8'></div>
+    </div>
+    <div id = "alert_move">Your turn. Place your move <strong>{{char_choice}}</strong></div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src = "{% static 'js/game.js' %}"></script>
+{% endblock javascript %}
